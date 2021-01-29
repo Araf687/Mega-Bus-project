@@ -25,10 +25,12 @@ function setCost(id,cost){
 //increase the booking of first class ticket
 document.getElementById("first-class-increase").addEventListener("click",function(){
     var valueIncrease=getValue("quantity-first-class");
-    quantity=valueIncrease+1;
-    setValue("quantity-first-class",quantity);
+    quantityFirstClass=valueIncrease+1;
+    setValue("quantity-first-class",quantityFirstClass);
 
-    var subTotalCost=quantity*150;//calculating the ticket cost
+    quantityEconomy=getValue("quantity-economy");
+
+    var subTotalCost=(quantityFirstClass*150)+(quantityEconomy*100);//calculating the ticket cost
     var tax=(subTotalCost/100)*10;//calculating the tax on ticket
     var totalCost=subTotalCost+tax;// calculating the total cost for getting the ticket
 
@@ -39,35 +41,49 @@ document.getElementById("first-class-increase").addEventListener("click",functio
 //decrease the booking of first class ticket
 document.getElementById("first-class-decrease").addEventListener("click",function(){
     var valueDecrease=getValue("quantity-first-class");
-    quantity=valueDecrease-1;
-    setValue("quantity-first-class",quantity);
+    quantityFirstClass=valueDecrease-1;
+    setValue("quantity-first-class",quantityFirstClass);
 
-    var subTotalCost=quantity*150;//calculating the ticket cost
+    var subTotalCost=(quantityFirstClass*150)+(quantityEconomy*100);//calculating the ticket cost
     var tax=(subTotalCost/100)*10;//calculating the tax on ticket
     var totalCost=subTotalCost+tax;// calculating the total cost for getting the ticket
     console.log(subTotalCost,tax,totalCost);
+
+    setCost("sub-total-cost",subTotalCost);
+    setCost("tax",tax);
+    setCost("total-cost",totalCost);
 })
 
 //increase the booking of  economy ticket
 document.getElementById("economy-increase").addEventListener("click",function(){
     var quantityIncrease=getValue("quantity-economy");
-    var quantity=quantityIncrease+1;
-    setValue("quantity-economy",quantity);
+    var quantityEconomy=quantityIncrease+1;
+    setValue("quantity-economy",quantityEconomy);
 
-    var subTotalCost=quantity*100;//calculating the ticket cost
+    quantityFirstClass=getValue("quantity-first-class");
+
+    var subTotalCost=(quantityEconomy*100)+(quantityFirstClass*150);//calculating the ticket cost
     var tax=(subTotalCost/100)*10;//calculating the tax on ticket
     var totalCost=subTotalCost+tax;// calculating the total cost for getting the ticket
     console.log(subTotalCost,tax,totalCost);
+
+    setCost("sub-total-cost",subTotalCost);
+    setCost("tax",tax);
+    setCost("total-cost",totalCost);
 })
 
 //decrease the booking of economy ticket
 document.getElementById("economy-decrease").addEventListener("click",function(){
     var quantityDecrease=getValue("quantity-economy");
-    var quantity=quantityDecrease-1;
-    setValue("quantity-economy",quantity);
+    var quantityEconomy=quantityDecrease-1;
+    setValue("quantity-economy",quantityEconomy);
 
-    var subTotalCost=quantity*100;//calculating the ticket cost
+    var subTotalCost=(quantityEconomy*100)+(quantityFirstClass*150);//calculating the ticket cost
     var tax=(subTotalCost/100)*10;//calculating the tax on ticket
     var totalCost=subTotalCost+tax;// calculating the total cost for getting the ticket
     console.log(subTotalCost,tax,totalCost);
+
+    setCost("sub-total-cost",subTotalCost);
+    setCost("tax",tax);
+    setCost("total-cost",totalCost);
 })
