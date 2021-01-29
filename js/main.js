@@ -21,6 +21,10 @@ function getCost(id)
 function setCost(id,cost){
     document.getElementById(id).innerText=cost;
 }
+
+function calculateCost(quantityFirstClass,quantityEconomy){
+
+}
 //---------------------------------------------------------------------------//
 //increase the booking of first class ticket
 document.getElementById("first-class-increase").addEventListener("click",function(){
@@ -43,6 +47,8 @@ document.getElementById("first-class-decrease").addEventListener("click",functio
     var valueDecrease=getValue("quantity-first-class");
     quantityFirstClass=valueDecrease-1;
     setValue("quantity-first-class",quantityFirstClass);
+
+    quantityEconomy=getValue("quantity-economy");
 
     var subTotalCost=(quantityFirstClass*150)+(quantityEconomy*100);//calculating the ticket cost
     var tax=(subTotalCost/100)*10;//calculating the tax on ticket
@@ -77,6 +83,8 @@ document.getElementById("economy-decrease").addEventListener("click",function(){
     var quantityDecrease=getValue("quantity-economy");
     var quantityEconomy=quantityDecrease-1;
     setValue("quantity-economy",quantityEconomy);
+
+    quantityFirstClass=getValue("quantity-first-class");
 
     var subTotalCost=(quantityEconomy*100)+(quantityFirstClass*150);//calculating the ticket cost
     var tax=(subTotalCost/100)*10;//calculating the tax on ticket
