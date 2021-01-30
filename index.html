@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -36,7 +37,7 @@
         </div>
 
 
-        <div class="booking-form">
+        <div id="booking-form">
             <h3>Explore By Bus</h3>
 
             <div class="inputs">
@@ -121,9 +122,24 @@
             </div>
             <button class="btn-style" id="btn-book-now">Book Now</button>
         </div>
-        <section>
-            
+        <!-- section to confirm about booking  -->
+        <section id="confirm-booking">
+            <div class="sms-confirm">
+                <h2 style="color:#53b83a;"><span><i class="fas fa-check-circle"></i></span> Booking Confirmed!</h2>
+                <p>Congratulation! Your tickets are successfully booked.</p>
+                <p><span id="terminal">khajaroad</span> to <span id="destination">chandgaon</span></p>
+                <h3>Booking Id: 17202155</h3>
+            </div>
+            <div class="details">
+                <h1>Details</h1>
+                <h4>Departure<span id="departure-details">mm/dd/yyyy</span></h4><hr>
+                <h4>Return<span id="return-details">mm/dd/yyyy</span></h4><hr>
+                <h4>Passengers<span id="passenger">3</span></h4><hr>
+                <h4>Total Cost<span id="total">400</span></h4><br>
+                <button class="btn-style" id="okay">Okay</button>
+            </div>
         </section>
+      
     </main>
 
     <!-- connect java script -->

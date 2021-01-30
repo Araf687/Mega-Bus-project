@@ -18,7 +18,7 @@ function getCost(id)
     return cost;
 }
 //function to set the text in a tag or set the cost int the tag of the  ticket form
-function setCost(id,cost){
+function setText(id,cost){
     document.getElementById(id).innerText=cost;
 }
 
@@ -28,9 +28,9 @@ function calculateCost(quantityFirstClass,quantityEconomy,costId1,costId2,costId
     var tax=(subTotalCost/100)*10;//calculating the tax on ticket
     var totalCost=subTotalCost+tax;// calculating the total cost for getting the ticket
 
-    setCost(costId1,subTotalCost);
-    setCost(costId2,tax);
-    setCost(costId3,totalCost);
+    setText(costId1,subTotalCost);
+    setText(costId2,tax);
+    setText(costId3,totalCost);
 
 }
 function isEmpty(id)
@@ -98,7 +98,34 @@ document.getElementById("btn-book-now").addEventListener("click",function(){
     if(getValue("quantity-first-class")==0 && getValue("quantity-economy")==0 ||isEmpty("from")=='y'||isEmpty("to")=='y'||isEmpty("departure")=='y'&& isEmpty("return")=='y')
     {
         alert("You have given wrong input.Please fill the text box correctly and select the quantity.");
+        //set default value to every input tag
         setValue("departure","mm/dd/yyyy");
         setValue("return","mm/dd/yyyy");
+        setValue("from","");
+        setValue("to","");
+        setValue("quantity-first-class",0);
+        setValue("quantity-economy",0);
+    }
+    else{
+        //geting the information from the booking form.
+        var terminal=document.getElementById("from").value;
+        var destination=document.getElementById("to").value;
+        var passenger=getValue("quantity-first-class")+getValue("quantity-economy");
+        var total='$'+document.getElementById("total-cost").innerText;
+        var departure=document.getElementById("departure").value;
+        var returns=document.getElementById("return").value;
+       
+
+        ///set the information as confirmation notification
+        setText("terminal",terminal);
+        setText("destination",destination);
+        setText("total",total);
+        setText("passenger",passenger);
+        setText("departure-details",departure);
+        setText("return-details",returns);
+        
+        //hide the booking form after the click in book now button and show the confirmation notification
+         document.getElementById('booking-form').style.display='none';
+         document.getElementById('confirm-booking').style.display='block';
     }
 })

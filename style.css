@@ -38,6 +38,16 @@ nav ul li a:hover, a.active{
     background-color: #52AF3A;
     border-radius: 5px;
 }
+#booking-form{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    float: right;
+    width: 80%;
+    margin: 50px 0px 0px 80px;
+    display: block;
+}
 .main-content{
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -56,29 +66,21 @@ nav ul li a:hover, a.active{
     font-family: 'Bebas Neue', cursive;
     font-weight: 500;
 }
-.booking-form{
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    float: right;
-    width: 80%;
-    margin: 50px 0px 0px 80px;
-}
-.booking-form h3{
+
+#booking-form h3{
     margin: 10px 0px;
 }
-.booking-form  .input-group{
+#booking-form  .input-group{
     margin: 10px 0;
 }
-.booking-form  .calculations{
+#booking-form  .calculations{
     margin: 10px 0;
 }
-.booking-form  .calculations p{
+#booking-form  .calculations p{
     font-weight: 500;
     margin-bottom: 10px;
 }
-.booking-form input{
+#booking-form input{
     width: 100%;
     display: block;
     padding: 10px;
@@ -88,7 +90,7 @@ nav ul li a:hover, a.active{
     border-radius: 4px;
     margin: 10px 0;
 }
-.booking-form .inputs{
+#booking-form .inputs{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -128,4 +130,38 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+
+
+/* booking confirmation */
+#confirm-booking{
+    width:600px;
+    border: 2px solid black;
+    border-radius:10px;
+    margin-top:50px;
+    margin-left: 90px;
+    padding: 20px;
+    background-color: white;
+    display: none;
+}
+.sms-confirm{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sms-confirm h2,p,h3{
+    margin-top: 0.5em;
+}
+.details h4{
+    color: gray;
+    margin-top: 1em;
+
+}
+.details span{
+    float: right;
+    margin-right: 10px;
+    
+}
+.details h1{
+    color: #53b83a;
+    margin-bottom: 30px;
 }
