@@ -33,6 +33,18 @@ function calculateCost(quantityFirstClass,quantityEconomy,costId1,costId2,costId
     setCost(costId3,totalCost);
 
 }
+function isEmpty(id)
+{
+    var value=document.getElementById(id).value;
+    if(value=="")
+    {
+        return 'y';
+    }
+    else
+    {
+        return 'n';
+    }
+}
 //---------------------------------------------------------------------------//
 //increase the booking of first class ticket
 document.getElementById("first-class-increase").addEventListener("click",function(){
@@ -53,6 +65,7 @@ document.getElementById("first-class-decrease").addEventListener("click",functio
         quantityFirstClass=0;
     }
     setValue("quantity-first-class",quantityFirstClass);
+
     quantityEconomy=getValue("quantity-economy");
     calculateCost(quantityFirstClass,quantityEconomy,"sub-total-cost","tax","total-cost");
     
@@ -65,7 +78,6 @@ document.getElementById("economy-increase").addEventListener("click",function(){
     setValue("quantity-economy",quantityEconomy);
 
     quantityFirstClass=getValue("quantity-first-class");
-
     calculateCost(quantityFirstClass,quantityEconomy,"sub-total-cost","tax","total-cost");
 })
 
@@ -80,6 +92,13 @@ document.getElementById("economy-decrease").addEventListener("click",function(){
     setValue("quantity-economy",quantityEconomy);
 
     quantityFirstClass=getValue("quantity-first-class");
-
     calculateCost(quantityFirstClass,quantityEconomy,"sub-total-cost","tax","total-cost");
+})
+document.getElementById("btn-book-now").addEventListener("click",function(){
+    if(getValue("quantity-first-class")==0 && getValue("quantity-economy")==0 ||isEmpty("from")=='y'||isEmpty("to")=='y'||isEmpty("departure")=='y'&& isEmpty("return")=='y')
+    {
+        alert("You have given wrong input.Please fill the text box correctly and select the quantity.");
+        setValue("departure","mm/dd/yyyy");
+        setValue("return","mm/dd/yyyy");
+    }
 })

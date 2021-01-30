@@ -42,50 +42,50 @@
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Dhaka">
+                    <input class="inp-style" id="from" type="text" name="" placeholder="Terminal">
                 </div>
                 <div class="input-group">
-                    <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Chittagone">
+                    <label" for="">To</label>
+                    <input class="inp-style" id="to" type="text" name="" placeholder="Destination">
                 </div>
             </div>
 
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                    <input class="inp-style" id="departure" type="date" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
+                    <input class="inp-style" id="return" type="date" name="">
                 </div>
             </div>
             <div class="inputs">
                 <div class="input-group f-class">
-                    <div class="plus-minus-btn">
+                    <div class="plus-minus-btn" id="first-class-decrease">
                        
-                        <button><span id="first-class-decrease">-</span></button>
+                        <button>-</button>
                     </div>
                    
                     <div>
                         <label for="">First Class ($150)</label>
                         <input class="inp-style inp-width" id="quantity-first-class" type="number" value=0 name="">
                     </div>
-                    <div class="plus-minus-btn">
-                        <button><span id="first-class-increase">+</span></button>
+                    <div class="plus-minus-btn" id="first-class-increase">
+                        <button>+</button>
                      
                     </div>
             </div>
                 <div class="input-group f-class">
-                    <div class="plus-minus-btn">
-                        <button><span id="economy-decrease">-</span></button>
+                    <div class="plus-minus-btn" id="economy-decrease">
+                        <button>-</button>
                     </div>
                     <div>
                         <label for="">Economy ($100)</label>
                         <input class="inp-style inp-width" id="quantity-economy" type="number" value="0" name="">
                     </div>
-                    <div class="plus-minus-btn">
-                        <button><span id="economy-increase">+</span></button>
+                    <div class="plus-minus-btn" id="economy-increase">
+                        <button>+</button>
                         
                     </div>
                 </div>
@@ -119,8 +119,11 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button class="btn-style" id="btn-book-now">Book Now</button>
         </div>
+        <section>
+            
+        </section>
     </main>
 
     <!-- connect java script -->
